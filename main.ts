@@ -44,9 +44,22 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
         . 1 . . . 1 1 1 
         . 1 1 1 1 1 . . 
         `, SpriteKind.Enemy2)
-    smallRock.setPosition(otherSprite.x, otherSprite.y)
+    smallRock.setPosition(otherSprite.x - -10, otherSprite.y - -10)
     smallRock.setVelocity(randint(-25, 25), randint(-25, 25))
     list.push(smallRock)
+    smallRock2 = sprites.create(img`
+        . . 1 1 1 . . . 
+        . 1 1 . 1 1 . . 
+        1 1 . . . 1 1 . 
+        1 . . . . . 1 1 
+        1 . . . . . . 1 
+        1 1 . . . . 1 1 
+        . 1 . . . 1 1 1 
+        . 1 1 1 1 1 . . 
+        `, SpriteKind.Enemy2)
+    smallRock2.setPosition(otherSprite.x + -10, otherSprite.y + -10)
+    smallRock2.setVelocity(randint(-25, 25), randint(-25, 25))
+    list.push(smallRock2)
     otherSprite.destroy(effects.disintegrate, 500)
     sprite.destroy()
     numRocks += -1
@@ -62,10 +75,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     info.changeLifeBy(-1)
 })
 let bigRock: Sprite = null
+let smallRock2: Sprite = null
 let smallRock: Sprite = null
 let projectile: Sprite = null
 let list: Sprite[] = []
 let mySprite: Sprite = null
+effects.starField.startScreenEffect()
 mySprite = sprites.create(img`
     . . . . . 1 1 . . . . . 
     . . . . 1 . . 1 . . . . 
