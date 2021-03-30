@@ -1,8 +1,8 @@
 namespace SpriteKind {
     export const Enemy2 = SpriteKind.create()
 }
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy += -5
+controller.up.onEvent(ControllerButtonEvent.Repeated, function () {
+    mySprite.vy += -1
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
@@ -10,14 +10,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         1 
         `, mySprite, 0, -100)
 })
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vx += -5
+controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
+    mySprite.vx += 1
 })
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vx += 5
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy += 5
+controller.down.onEvent(ControllerButtonEvent.Repeated, function () {
+    mySprite.vy += 1
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy2, function (sprite, otherSprite) {
     otherSprite.destroy(effects.disintegrate, 500)
@@ -73,6 +70,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     mySprite.setPosition(80, 60)
     mySprite.setVelocity(0, 0)
     info.changeLifeBy(-1)
+})
+controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
+    mySprite.vx += -1
 })
 let bigRock: Sprite = null
 let smallRock2: Sprite = null

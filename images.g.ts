@@ -343,6 +343,46 @@ ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 . 1 . . . 1 1 1 
 . 1 1 1 1 1 . . 
 `;
+            case "image12":return img`
+. . 1 1 1 . . . 
+. 1 1 . 1 1 . . 
+1 1 . . . 1 1 . 
+1 . . . . . 1 1 
+1 . . . . . . 1 
+1 1 . . . . 1 1 
+. 1 . . . 1 1 1 
+. 1 1 1 1 1 . . 
+`;
+            case "image13":return img`
+. . 1 1 1 . . . 
+. 1 1 . 1 1 . . 
+1 1 . . . 1 1 . 
+1 . . . . . 1 1 
+1 . . . . . . 1 
+1 1 . . . . 1 1 
+. 1 . . . 1 1 1 
+. 1 1 1 1 1 . . 
+`;
+            case "image14":return img`
+. . 1 1 1 . . . 
+. 1 1 . 1 1 . . 
+1 1 . . . 1 1 . 
+1 . . . . . 1 1 
+1 . . . . . . 1 
+1 1 . . . . 1 1 
+. 1 . . . 1 1 1 
+. 1 1 1 1 1 . . 
+`;
+            case "image15":return img`
+. . 1 1 1 . . . 
+. 1 1 . 1 1 . . 
+1 1 . . . 1 1 . 
+1 . . . . . 1 1 
+1 . . . . . . 1 
+1 1 . . . . 1 1 
+. 1 . . . 1 1 1 
+. 1 1 1 1 1 . . 
+`;
         }
         return null;
     })
