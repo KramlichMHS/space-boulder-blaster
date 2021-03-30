@@ -84,8 +84,9 @@ let numRocks = 0
 list = []
 info.setScore(0)
 info.setLife(3)
+let difficulty = 3
 game.onUpdateInterval(5000, function () {
-    if (numRocks < 3) {
+    if (numRocks < difficulty) {
         bigRock = sprites.create(img`
             . . . . 1 1 1 1 1 1 1 . . . . . 
             . . . 1 1 . . . . . 1 1 1 . . . 
@@ -109,6 +110,9 @@ game.onUpdateInterval(5000, function () {
         numRocks += 1
         list.push(bigRock)
     }
+})
+game.onUpdateInterval(15000, function () {
+    difficulty += 1
 })
 forever(function () {
     if (mySprite.x <= -10) {
